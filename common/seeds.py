@@ -3,17 +3,23 @@ This module seeds data across the project
 """
 
 from django_seed import Seed
+from faker import Faker
 
 
-from duka import models
+from duka.models import Category, Product
 
 seeder = Seed.seeder("en_US")
 
 
 def main():
     """Populate the DB"""
-    seeder.entity(models.Category, 10)
-    seeder.entity(models.Product, 20)
+    seeder.entity(Category, 10)
+    seeder.entity(Product, 20)
+
+    # create 10 categories
+    for _ in range(10):
+        
+
 
 
 if __name__ == "__main__":
