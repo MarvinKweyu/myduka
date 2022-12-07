@@ -14,7 +14,7 @@ def product_list(request, category_slug=None):
     return render(
         request,
         "duka/product/list.html",
-        {"product": product, "category": category, "categories": categories},
+        {"products": products, "category": category, "categories": categories},
     )
 
 
