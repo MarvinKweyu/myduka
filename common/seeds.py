@@ -16,11 +16,6 @@ def main():
     seeder.entity(Category, 10)
     seeder.entity(Product, 20)
 
-    # create 10 categories
-    for _ in range(10):
-        
-
-
 
 if __name__ == "__main__":
     main()
