@@ -20,6 +20,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path(
+        "cart", include("cart.urls", namespace="cart")
+    ),  # add before since its more restrictive
     path("", include("duka.urls", namespace="dukani")),
 ]
 
