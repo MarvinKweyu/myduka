@@ -22,7 +22,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path(
         "cart", include("cart.urls", namespace="cart")
-    ),  # add before since its more restrictive
+    ),
+    path("orders", include("orders.urls", namespace="orders")),
+    # add others before since they are more restrictive
     path("", include("duka.urls", namespace="dukani")),
 ]
 
