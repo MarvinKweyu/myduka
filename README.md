@@ -5,9 +5,9 @@ An online shopping experience. The e-commerce system Kenya needs.
 ---
 
 ### Bare metal
-**Note:** 
+**Base requirements:** 
 
-**Install postgresql on your host machine**
+**Install postgresql and rabbitMQ on your host machine**
 
 Setup a virtual environment, install requirements , run migrations and run the server
 
@@ -15,7 +15,7 @@ Setup a virtual environment, install requirements , run migrations and run the s
 bash develop.sh
 ```
 
-### It just works(Docker)
+### It just works(Docker)  - WIP
 
 **Development**
 

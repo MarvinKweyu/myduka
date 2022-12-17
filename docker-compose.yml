@@ -10,6 +10,9 @@ services:
       - 8000:8000
     env_file:
       - ./.env.dev
+    links:
+      - db
+      - rabbit
     depends_on:
       - db
   db:
@@ -20,7 +23,46 @@ services:
       - POSTGRES_USER=myduka
       - POSTGRES_PASSWORD=myduka
       - POSTGRES_DB=myduka_dev
-
+  rabbit:
+    hostname: rabbit
+    image: rabbitmq:3.6.9
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=mypass
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  # celery worker
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./run_celery.sh
+    volumes:
+      - .:/usr/src/myduka/
+    links:
+      - worker
+      - db
+      - rabbit
+    depends_on:
+      - worker
+      - rabbit
+  # Celery worker
+  beat:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      command: ./run_celery_beat.sh
+      volumes:
+          - .:/code:Z
+      links:
+          - worker
+          - db
+          - rabbit
+          - redis
+      depends_on:
+          - worker
+          - rabbit
 # persist data beyond life of container
 volumes:
   postgres_data:
