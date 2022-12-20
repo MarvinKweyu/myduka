@@ -18,6 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+admin.site.site_header = "MyDuka Administrator"
+admin.site.site_title = "MyDuka Admin Portal"
+admin.site.index_title = "Welcome to MyDuka Portal"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("cart", include("cart.urls", namespace="cart")),

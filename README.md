@@ -11,6 +11,8 @@ An online shopping experience. The e-commerce system Kenya needs.
 
 :heavy_check_mark: Sending an email confirmation on order
 
+:heavy_check_mark: Complete payment of order using a credit card
+
 
 ## Setup 
 ---
