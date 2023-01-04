@@ -13,6 +13,8 @@ An online shopping experience. The e-commerce system Kenya needs.
 
 :heavy_check_mark: Complete payment of order using a credit card
 
+:heavy_check_mark: Generate PDF invoice on sale and send the invoice to the customer
+
 
 ## Setup 
 ---
