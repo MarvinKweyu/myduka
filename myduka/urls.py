@@ -26,7 +26,7 @@ admin.site.index_title = "Welcome to MyDuka Portal"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("cart", include("cart.urls", namespace="cart")),
-    path("orders", include("orders.urls", namespace="orders")),
+    path("orders/", include("orders.urls", namespace="orders")),
     path("payment/", include("payment.urls", namespace="payment")),
     # add others before since they are more restrictive
     path("", include("duka.urls", namespace="dukani")),
