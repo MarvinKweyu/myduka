@@ -20,7 +20,11 @@ An online shopping experience. The e-commerce system Kenya needs.
 ### Bare metal
 #### Base requirements
 
-**Install postgresql and rabbitMQ on your host machine**
+Install the following dependencies before running the `develop` bash script.
+
+- Postgresql
+- RabbitMQ
+- Weasyprint
 
 Setup a virtual environment, install requirements , run migrations and run the server
 
@@ -63,3 +67,7 @@ docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
 Access the project via: **127.0.0.1:8000**
+
+## Sample generated files
+
+![SampleInvoice](./screenshots/invoice_order7.png)

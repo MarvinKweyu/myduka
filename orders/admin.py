@@ -52,6 +52,16 @@ def order_detail(obj):
     return mark_safe(f'<a href="{url}">View</a>')
 
 
+def order_pdf(obj):
+    """Generate a pdf on the admin section based on a view"""
+    url = reverse("orders:admin_order_pdf", args=[obj.id])
+    return mark_safe(f'<a href="{url}"> PDF</a>')
+
+
+# use this as column name
+order_pdf.short_description = "Invoice"
+
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     """Manage orders in admin section"""
@@ -68,6 +78,7 @@ class OrderAdmin(admin.ModelAdmin):
         "created",
         "updated",
         order_detail,
+        order_pdf,
     ]
     list_filter = ["paid", "created", "updated"]
     inlines = [OrderItemInline]

@@ -12,6 +12,8 @@ ENV PYTHONUNBUFFERED 1
 # psycopg deps
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 
+# weasyprint
+RUN apk add py3-pip python3-dev pango zlib-dev jpeg-dev openjpeg-dev g++ libffi-dev
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
