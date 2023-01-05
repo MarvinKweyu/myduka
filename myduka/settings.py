@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "cart",
     "orders",
     "payment",
+    "coupons",
     # installed
     "django_seed",
 ]

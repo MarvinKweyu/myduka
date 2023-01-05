@@ -28,6 +28,7 @@ urlpatterns = [
     path("cart", include("cart.urls", namespace="cart")),
     path("orders/", include("orders.urls", namespace="orders")),
     path("payment/", include("payment.urls", namespace="payment")),
+    path("coupons/", include("coupons.urls", namespace="coupons")),
     # add others before since they are more restrictive
     path("", include("duka.urls", namespace="dukani")),
 ]

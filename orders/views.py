@@ -19,8 +19,12 @@ def order_create(request):
     if request.method == "POST":
         order_form = OrderCreateForm(request.POST)
         if order_form.is_valid():
-            # create order in db
-            order = order_form.save()
+
+            order = order_form.save(commit=False)
+            if cart.coupon:
+                order.coupon = cart.coupon
+                order.discount = cart.coupon.discount
+            order.save()
             for item in cart:
                 # create and save in single step
                 OrderItem.objects.create(
