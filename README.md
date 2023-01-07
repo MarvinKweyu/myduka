@@ -15,6 +15,8 @@ An online shopping experience. The e-commerce system Kenya needs.
 
 :heavy_check_mark: Generate PDF invoice on sale and send the invoice to the customer
 
+:heavy_check_mark: Recommendation engine for products that go well with others
+
 
 ## Setup 
 ---
