@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "payment",
     "coupons",
     # installed
-    "django_seed",
+    "django_seeder",
 ]
 
 MIDDLEWARE = [
@@ -127,7 +127,7 @@ LANGUAGES = (
     ("en", _("English")),
     ("es", _("Spanish")),
 )
-LOCALE_PATHS = os.path.join(BASE_DIR, "locale/")
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale/")]
 
 TIME_ZONE = "UTC"
 
@@ -162,3 +162,11 @@ BRAINTREE_CONF = braintree.Configuration(
     public_key=env("BRAINTREE_PUBLIC_KEY"),
     private_key=env("BRAINTREE_PRIVATE_KEY"),
 )
+
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+REDIS_DB = 1
+
+
+# FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
+# FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
