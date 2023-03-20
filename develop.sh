@@ -11,7 +11,7 @@ set -e
 DB_NAME=${1:-myduka}
 DB_USER=${2:-myduka}
 DB_USER_PASS=${3:-myduka}
-sudo su postgres <<EOF
+sudo su p <<EOF
 createdb  $DB_NAME;
 psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_USER_PASS';"
 psql -c "grant all privileges on database $DB_NAME to $DB_USER;"

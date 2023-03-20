@@ -2,6 +2,16 @@
 An online shopping experience. The e-commerce system Kenya needs.
 
 
+- [Myduka](#myduka)
+  - [Core features](#core-features)
+  - [Setup](#setup)
+    - [Bare metal](#bare-metal)
+      - [Base requirements](#base-requirements)
+      - [Running message brokers;](#running-message-brokers)
+    - [It just works(Docker)  - WIP](#it-just-worksdocker----wip)
+  - [Sample generated files](#sample-generated-files)
+
+
 ## Core features
 :heavy_check_mark: Viewing items in the shop
 

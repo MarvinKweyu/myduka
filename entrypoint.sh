@@ -1,7 +1,6 @@
 
 #! /bin/sh
 
-
 echo "starting project"
 set -e
 
